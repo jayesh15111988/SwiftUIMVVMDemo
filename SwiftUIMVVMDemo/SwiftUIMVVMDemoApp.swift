@@ -11,8 +11,9 @@ import SwiftUI
 struct SwiftUIMVVMDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-            //sss
+            let networkService = NetworkService(baseURLString: "https://jsonplaceholder.typicode.com/")
+            let viewModel = LandingScreenViewModel(networkService: networkService)
+            LandingScreen(viewModel: viewModel)
         }
     }
 }
